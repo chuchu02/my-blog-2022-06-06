@@ -1,24 +1,41 @@
-import React from "react";
 import { Link } from "gatsby";
+import React from "react";
 
-const Layout = ( {pageTitle, children}) => {
+import {
+  container,
+  heading,
+  navLinks,
+  navLinkItem,
+  navLinkText,
+} from "./layout.module.css";
+
+function Layout({ pageTitle, children }) {
   return (
-    <div>
+    <div className={container}>
       <title>{pageTitle}</title>
       <nav>
-        <ul>
-          <li><Link to ="/">Home</Link></li>
-          <li><Link to ="/about">About</Link></li>
-          <li><Link to ="/test">TEST</Link></li>
-          <li><Link to ="/test-space">Test-Space</Link></li>
+        <ul className={navLinks}>
+          <li className={navLinkItem}>
+            <Link className={navLinkText} to="/">
+              Home
+            </Link>
+          </li>
+          <li className={navLinkItem}>
+            <Link className={navLinkText} to="/about">
+              About
+            </Link>
+          </li>
         </ul>
       </nav>
+
       <main>
-        <h1>{pageTitle}</h1>
+        <h1 className={heading}>{pageTitle}</h1>
         {children}
       </main>
+
+      <div>Copyright All Rights</div>
     </div>
-  )
+  );
 }
 
 export default Layout;
