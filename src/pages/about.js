@@ -1,13 +1,12 @@
 import React from "react";
 
-const AboutPage = () => {
+function AboutPage() {
   return (
     <main>
-      <title>About Me</title>
-      <h1>About Me</h1>
-      <p>Hi there! I'm pround creator of this site, which I built with Gatsby</p>
+      <title>자기소개</title>
+      <h1>자기소개 페이지 입니다.</h1>
     </main>
-  )
+  );
 }
 
 export default AboutPage;
